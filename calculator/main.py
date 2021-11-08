@@ -23,4 +23,3 @@ class Calculator:
         """ tests divsion of two numbers """
         self.result = value_a / value_b
         return self.result
-
