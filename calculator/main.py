@@ -2,7 +2,7 @@
 class Calculator:
     """ This is the Calculator class"""
 
-    result = 0
+    result = 3
     def get_result(self):
         """ Get Result of Calculation"""
         return self.result
@@ -19,3 +19,8 @@ class Calculator:
         """ tests multiplication of two numbers"""
         self.result = vale_a * value_b
         return self.result
+    def divide_numbers(self, value_a, value_b):
+        """ tests divsion of two numbers """
+        self.result = value_a / value_b
+        return self.result
+
