@@ -12,7 +12,7 @@ def test_calculator_add():
 
 def test_calculator_subtract():
     """Testing the subtract function of the calculator"""
-    assert Calculator.substract_number(1, 2) == -1
+    assert Calculator.subtract_number(1, 2) == -1
 
 
 def test_calculator_multiply():
