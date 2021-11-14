@@ -11,6 +11,7 @@ class Calculator:
 
     @staticmethod
     def get_result_of_first_calculation_added_to_history():
+        # will connect history with class
         return Calculator.history[0].getResult()
 
     @staticmethod

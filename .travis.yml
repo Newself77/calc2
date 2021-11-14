@@ -9,5 +9,5 @@ script:
 
 branches:
   only:
-    - main
+    - Cal_part2
     - development

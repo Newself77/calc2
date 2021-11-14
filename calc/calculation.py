@@ -2,7 +2,6 @@
 
 
 class Calculation:
-
     # constructor and it is the first function called when an object of the class is instantiated
     def __init__(self, value_a, value_b):
         # self references the instances object of the class
