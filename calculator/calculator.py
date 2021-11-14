@@ -60,4 +60,3 @@ class Calculator:
 
     def get_result(self):
         pass
-

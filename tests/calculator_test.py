@@ -60,4 +60,3 @@ def test_calculator_subtract(clear_history):
 def test_calculator_multiply(clear_history):
     """Tests multiplication of two numbers"""
     assert Calculator.multiply_numbers(1, 2) == 2
-
