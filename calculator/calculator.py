@@ -10,6 +10,15 @@ class Calculator:
     history = []
 
     @staticmethod
+    def get_result_of_first_calculation_added_to_history():
+        return Calculator.history(0).getResults()
+
+    @staticmethod
+    def clear_history():
+        Calculator.history.clear()
+        return True
+
+    @staticmethod
     def history_count():
         return len(Calculator.history)
 
