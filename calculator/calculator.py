@@ -1,14 +1,17 @@
 """ This is the increment function"""
 # first import the addition namespace
 from calc.addition import Addition
+from calc.subtraction import Subtraction
+from calc.multiplication import Multiplication
 
 
 class Calculator:
     """ This is the Calculator class"""
     history = []
 
-    def __init__(self):
-        self.result = None
+    @staticmethod
+    def history_count():
+        return len(Calculator.history)
 
     @staticmethod
     def add_calculation_to_history(calculation):
@@ -18,7 +21,7 @@ class Calculator:
     @staticmethod
     def get_result_of_last_calculation_added_to_history():
         # -1 get the last item to the list automatically and you can expect it to have the get results method
-        return Calculator.history[-1].getResults()
+        return Calculator.history[-1].getResult()
 
     @staticmethod
     def add_number(value_a, value_b):
@@ -30,14 +33,21 @@ class Calculator:
         return Calculator.get_result_of_last_calculation_added_to_history()
 
     @staticmethod
+    # this is on example of a calling method
     def subtract_number(value_a, value_b):
         """ subtract number from result"""
-        return value_a - value_b
+        # create an subtraction object using a factory we created on the calculation class
+        subtraction = Subtraction.create(value_a, value_b)
+        # addition = Addition(value_a,value_b) <-this is not good but will work. It will be repeated to much
+        Calculator.add_calculation_to_history(subtraction)
+        return Calculator.get_result_of_last_calculation_added_to_history()
 
     @staticmethod
     def multiply_numbers(vale_a, value_b):
         """ multiplication of two numbers and store the result"""
-        return vale_a * value_b
+        # this is a shorthand way to create the multiplication object and added it the history in one line
+        Calculator.add_calculation_to_history(Multiplication.create(vale_a, value_b))
+        return Calculator.get_result_of_last_calculation_added_to_history()
 
     def get_result(self):
         pass
