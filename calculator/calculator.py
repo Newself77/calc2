@@ -11,7 +11,7 @@ class Calculator:
 
     @staticmethod
     def get_result_of_first_calculation_added_to_history():
-        return Calculator.history(0).getResults()
+        return Calculator.history[0].getResult()
 
     @staticmethod
     def clear_history():
