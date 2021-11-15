@@ -1,6 +1,6 @@
 """This is the addition calc that inherits the value A & value B from the calculation class"""
-# Called a namespace it is like files & folders the classes are files & the folders organize the classes
-# It looks like a folder, file path but it is sort of a virtual representation of how the program is organized
+# Namespace it is like files & folders the classes are files & the folders organize the classes
+# Folder, file path but it is a virtual representation of how the program is organized
 from calc.calculation import Calculation
 
 
