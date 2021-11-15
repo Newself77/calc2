@@ -11,30 +11,29 @@ class Calculator:
 
     @staticmethod
     def get_result_of_first_calculation_added_to_history():
-        """ This is the Calculator class"""
-        # will connect history with class
+        """ This is the get first result class"""
         return Calculator.history[0].getResult()
 
     @staticmethod
     def clear_history():
-        """ This is the Calculator class"""
+        """ This is the clear history Calculator class"""
         Calculator.history.clear()
         return True
 
     @staticmethod
     def history_count():
-        """ This is the Calculator class"""
+        """ This is the history count Calculator class"""
         return len(Calculator.history)
 
     @staticmethod
     def add_calculation_to_history(calculation):
-        """ This is the Calculator class"""
+        """ This is the add to Calculator class"""
         Calculator.history.append(calculation)
         return True
 
     @staticmethod
     def get_result_of_last_calculation_added_to_history():
-        """ This is the Calculator class"""
+        """ This is the last get results Calculator class"""
         # -1 the list automatically and you can expect it to have the get results method
         return Calculator.history[-1].getResult()
 

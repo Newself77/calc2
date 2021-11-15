@@ -1,6 +1,6 @@
-"""This is the addition calculation that inherits the value A and value B from the calculation class"""
+"""This addition calculation that inherits the value A and value B from the calculation class"""
 # this a namespace it is like files & folders the classes are files. Folders organize the classes
-# Looks like a folder & file path but it is sort of a virtual representation of how the program is organized
+# a folder & file path is sort of a virtual representation of how the program is organized
 
 from calc.calculation import Calculation
 
@@ -11,5 +11,6 @@ class Multiplication(Calculation):
     the calculation parent class"""
 
     def getResult(self):
-        # you need to use self to reference the data contained in the instance of the object. This is encapsulation
+        """this multiplies a and b"""
+        # use self to reference data contained in instance of the object. This is encapsulation
         return self.value_a * self.value_b

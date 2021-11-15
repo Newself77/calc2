@@ -10,5 +10,6 @@ class Addition(Calculation):
     the calculation parent class"""
 
     def getResult(self):
-        # you need to use self to reference the data contained in the instance of the object. This is encapsulation
+        """This shows the added value of a and b"""
+        # use self to reference data contained in the instance of the object. encapsulation
         return self.value_a + self.value_b
