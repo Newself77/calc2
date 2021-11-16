@@ -32,7 +32,7 @@ def test_clear_history(clear_history):
     assert Calculator.add_number(3, 2) == 5
     assert Calculator.add_number(4, 2) == 6
     assert Calculator.history_count() == 4
-    assert Calculator.clear_history() == True
+    assert Calculator.clear_history() == 1
     assert Calculator.history_count() == 0
 
 
