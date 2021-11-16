@@ -10,7 +10,7 @@ class Subtraction(Calculation):
     """The sub class has one method to get the result of the the calculation A and B come from
     the calculation parent class"""
 
-    def getResult(self):
+    def get_result(self):
         """Subtraction of value a and b"""
         # use self to reference data contained in instance of the object. encapsulation
         return self.value_a - self.value_b

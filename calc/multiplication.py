@@ -10,7 +10,7 @@ class Multiplication(Calculation):
     """The addition class has one method to get the result of the the calculation A and B come from
     the calculation parent class"""
 
-    def getResult(self):
+    def get_result(self):
         """this multiplies a and b"""
         # use self to reference data contained in instance of the object. This is encapsulation
         return self.value_a * self.value_b
