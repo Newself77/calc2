@@ -1,8 +1,8 @@
 """ This is the increment function"""
 # first import the addition namespace
-from calc import Addition
-from calc import Subtraction
-from calc import Multiplication
+from calc.addition import Addition
+from calc.multiplication import Multiplication
+from calc.subtraction import Subtraction
 
 
 class Calculator:
