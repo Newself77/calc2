@@ -1,14 +1,16 @@
-"""Calculation history Class"""
+"""Calculation history class"""
 class Calculations:
     history = []
-     # pylint: disable=too-few-public-methods
+    # pylint: disable=too-few-public-methods
     @staticmethod
     def clear_history():
         Calculations.history.clear()
         return True
+
     @staticmethod
     def count_history():
-        return Len(Calculations.history)
+        return len(Calculations.history)
+
     @staticmethod
     def get_last_calculation():
         return Calculations.history[-1]

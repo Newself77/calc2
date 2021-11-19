@@ -17,20 +17,20 @@ def setup_addition_calculation_fixture():
     # pylint: disable=redefined-outer-name
     values = (1, 2)
     addition = Addition(values)
-    Calculations.add_calculation(addition)
+    Calculations.add_calculations(addition)
 
 
 def test_add_calculation_to_history(clear_history_fixture, setup_addition_calculation_fixture):
     """Testing clear history returns true for success"""
     # pylint: disable=unused-argument,redefined-outer-name,singleton-comparison
-    assert Calculations.count_history() == 1 == 1
+    assert Calculations.count_history() == 1
 
 
 def test_clear_calculation_history(clear_history_fixture, setup_addition_calculation_fixture):
     assert Calculations.count_history() == 1
     Calculations.clear_history()
     assert Calculations.count_history() == 0
-    assert Calculations.clear_history() == True
+    assert not Calculations.clear_history() == 0
 
 
 def test_get_calculation(clear_history_fixture, setup_addition_calculation_fixture):
@@ -45,7 +45,7 @@ def test_get_calculation_last(clear_history_fixture, setup_addition_calculation_
     assert Calculations.get_last_calculation().get_result() == 3
 
 
-def test_get_calculation_fisrt(clear_history_fixture, setup_addition_calculation_fixture):
+def test_get_calculation_first(clear_history_fixture, setup_addition_calculation_fixture):
     """Testing getting a specific calculation out of the history"""
     # pylint: disable=unused-argument,redefined-outer-name
     assert Calculations.get_first_calculation().get_result() == 3
