@@ -27,10 +27,11 @@ def test_add_calculation_to_history(clear_history_fixture, setup_addition_calcul
 
 
 def test_clear_calculation_history(clear_history_fixture, setup_addition_calculation_fixture):
+    """Testing calculation history"""
     assert Calculations.count_history() == 1
     Calculations.clear_history()
     assert Calculations.count_history() == 0
-    assert not Calculations.clear_history() == 0
+    assert Calculations.clear_history() == True
 
 
 def test_get_calculation(clear_history_fixture, setup_addition_calculation_fixture):

@@ -31,4 +31,4 @@ class Calculator:
 
     @classmethod
     def clear_history(cls):
-        pass
+        """will clear history"""
