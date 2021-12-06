@@ -3,7 +3,7 @@ from calc.calculations.calculation import Calculation
 
 
 class Multiplication(Calculation):
-    """subtraction calculation object"""
+    """multiplication calculation object"""
 
     def get_result(self):
         """get the multiplication results"""
@@ -11,3 +11,11 @@ class Multiplication(Calculation):
         for value in self.values:
             result = result * value
         return result
+
+    @classmethod
+    def create(cls, tuple_values):
+        pass
+
+
+def multiplication():
+    return None

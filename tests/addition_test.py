@@ -2,11 +2,12 @@
 from calc.calculations.addition import Addition
 
 
-def test_calculation_addition():
+def test_static_calculation_addition(addition_file_fixture):
     """testing that our calculator has a static method for addition"""
-    # Arrange
-    mynumbers = (1.0, 2.0)
-    addition = Addition(mynumbers)
-    # Act
     # Assert
-    assert addition.get_result() == 3.0
+    for index, row in addition_file_fixture.iterrows():
+        tuple_values = (row.value_1, row.value_2)
+        # Act
+        addition = Addition.create(tuple_values)
+        # Assert
+        assert addition.get_result() == row.result
