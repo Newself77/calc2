@@ -1,16 +1,17 @@
 """Subtraction Class"""
-import pprint
-
-from calc.calculations.calculation import Calculation
+from operator import sub
+from .calculation import Calculation
 
 
 class Subtraction(Calculation):
     """subtraction calculation object"""
 
-    def get_result(self):
-        """get the subtraction results"""
-        difference_of_values = 0.0
-        for value in self.values:
-            difference_of_values = difference_of_values - value
-            pprint.pprint(value)
-        return difference_of_values
+    def subtract(self):
+        """get results for test"""
+        if isinstance(self.values, list):
+            total = self.values[0]
+            for num in self.values[1:]:
+                total -= num
+            self.results = total
+            return total
+        return self.calculate_dataframe("-", "Subtract", sub)

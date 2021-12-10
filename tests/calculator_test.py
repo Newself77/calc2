@@ -21,10 +21,15 @@ def test_calculator_add_static(clear_history_fixture):
 def test_calculator_subtract_static(clear_history_fixture):
     """Testing the subtract method of the calc"""
     # pylint: disable=unused-argument,redefined-outer-name
-    assert Calculator.subtract_numbers(1.0, 2.0) == -3.0
+    assert Calculator.subtract_numbers(1.0, 2.0) == -1.0
 
 
 def test_calculator_multiply_static(clear_history_fixture):
     """Testing the subtract method of the calc"""
     # pylint: disable=unused-argument,redefined-outer-name
     assert Calculator.multiply_numbers(1.0, 2.0) == 2.0
+
+
+def test_calculator_division_static():
+    """Testing the divide method of the calc"""
+    assert Calculator.divide_numbers(4, 2) == 2

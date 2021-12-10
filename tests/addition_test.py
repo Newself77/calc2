@@ -1,26 +1,26 @@
 """Testing Addition"""
-
+from functools import lru_cache
+from os import path
 import pytest
-import pandas as pd
 from calc.calculations.addition import Addition
 
 
-
-@pytest.fixture
-def file_name(csv_dir_path):
+@lru_cache(None)
+def addition_dataframe():
     """Method to pull CSV files"""
-    with open("datamanager/csv_test_excel/add_1000.csv", 'r') as infile:
-        reader = pd.read_csv(infile, delimiter=",")
-    return reader
+    return Addition("datamanager/csv_test_excel/add_1000.csv")
 
-
-def test_static_calculation_addition(addition_file_fixture):
+def test_static_calculation_addition():
     """testing that our calculator has a static method for addition"""
     # Assert
+    addition = addition_dataframe()
+    result = addition.add() == addition.values['result']
+    assert result.all()
 
-    for index, row in addition_file_fixture.iterrows():
-        tuple_values = (row.value_1, row.value_2)
-        # Act
-        addition = Addition.create(tuple_values)
-        # Assert
-        assert addition.get_result() == row.result
+def test_wrong_calculation():
+    """Testing Bad Addition"""
+    with pytest.raises(TypeError):
+        Addition((1, None))
+    file = path.join(__file__, "../../datamanager/csv_test_excel/_bad_add.csv")
+    file = path.abspath(path.normpath(file))
+    assert Addition(file).add() == []

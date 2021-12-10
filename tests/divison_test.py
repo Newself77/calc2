@@ -1,26 +1,26 @@
 """Testing Division"""
-import pytest
-
-import pandas as pd
-
+from functools import lru_cache
+from os import path
 from calc.calculations.division import Division
 
 
-@pytest.fixture
-def read_file(csv_dir_path):
-    """method for pull csv file"""
-    with open("datamanager/csv_test_excel/division_1000.csv", 'r') as infile:
-        reader = pd.read_csv(infile, delimiter=",")
-    return reader
+@lru_cache(None)
+def division_file_fixture():
+    """Method to pull CSV files"""
+    return Division("datamanager/csv_test_excel/division_1000.csv")
 
 
-def test_static_calculation_division(division_file_fixture):
+def test_static_calculation_division():
     """testing that our calculator has a static method for division"""
     # Assert
+    division = division_file_fixture()
+    result = division.divide() == division.values['result']
+    assert result.all()
 
-    for index, row in division_file_fixture.iterrows():
-        tuple_values = (row.value_1, row.value_2)
-        # Act
-        division = Division(tuple_values)
-        # Assert
-        assert division.get_result() == row.result
+
+def test_bad_division():
+    """Testing Bad Division"""
+    file = path.join(__file__, "../../datamanager/csv_test_excel/_bad_divide.csv")
+    file = path.abspath(path.normpath(file))
+    assert Division(file).divide() == []
+    assert Division((1, 0)).divide() == float("inf")

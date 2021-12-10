@@ -1,25 +1,25 @@
 """Testing Multiplication"""
-import pytest
-import pandas as pd
+from functools import lru_cache
+from os import path
 from calc.calculations.multiplication import Multiplication
 
 
-
-@pytest.fixture
-def read_file(csv_dir_path):
-    """Method for csv file to read"""
-    with open("datamanager/csv_test_excel/multiplication_1000.csv", 'r') as infile:
-        reader = pd.read_csv(infile, delimiter=",")
-    return reader
+@lru_cache(None)
+def multiplication_file_fixture():
+    """Method to pull CSV files"""
+    return Multiplication("datamanager/csv_test_excel/multiplication_1000.csv")
 
 
-def test_static_calculation_multiplication(multiplication_file_fixture):
+def test_static_calculation_multiplication():
     """testing that our calculator has a static method for multiplication"""
     # Assert
+    multiplication = multiplication_file_fixture()
+    result = multiplication.multiply() == multiplication.values['result']
+    assert result.all()
 
-    for index, row in multiplication_file_fixture.iterrows():
-        tuple_values = (row.value_1, row.value_2)
-        # Act
-        Multiplication.create(tuple_values)
-        # Assert
-        assert Multiplication.get_result() == row.result
+
+def test_bad_multiply():
+    """Testing Bad Multiplication"""
+    file = path.join(__file__, "../../datamanager/csv_test_excel/_bad_multiply.csv")
+    file = path.abspath(path.normpath(file))
+    assert Multiplication(file).multiply() == []

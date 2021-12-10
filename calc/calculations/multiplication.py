@@ -1,21 +1,17 @@
 """Multiplication Class"""
-from calc.calculations.calculation import Calculation
+from operator import mul
+from .calculation import Calculation
 
 
 class Multiplication(Calculation):
     """multiplication calculation object"""
 
-    def get_result(self):
-        """get the multiplication results"""
-        result = 1.0
-        for value in self.values:
-            result = result * value
-        return result
-
-    @classmethod
-    def create(cls, tuple_values):
-        pass
-
-
-def multiplication():
-    return None
+    def multiply(self):
+        """get results for test"""
+        if isinstance(self.values, list):
+            total = 1
+            for num in self.values:
+                total *= num
+            self.results = total
+            return total
+        return self.calculate_dataframe("*", "Multiplication", mul)
