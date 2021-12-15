@@ -9,7 +9,6 @@ RUN adduser myuser
 USER myuser
 WORKDIR /home/myuser
 ENV PATH="/home/myuser/.local/bin:${PATH}"
-COPY --chown=myuser:myuser ../../Downloads/calc2-webCalc-Part1/calc2-webCalc-Part1 .
-RUN pip install -r requirements.txt
+COPY requirements.txt /tmp/requirements.txt
+RUN python3 -m pip install -r /tmp/requirements.txt
 CMD ["uwsgi", "app/app.ini"]
-
