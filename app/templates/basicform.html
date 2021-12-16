@@ -1,17 +1,24 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
-{% block head %}
-    {{ super() }}
-    <style type="text/css">
-        .important {
-            color: #336699;
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style3.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style4colorpro.css') }}">
+{% endblock %}
+{% block title %}Calculator{% endblock %}
+{% block styling %}
+body {
+            background-image: url("{{ url_for('static', filename='images/Internet_Banner.png') }}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
         }
-    </style>
+
+input {
+    color: black !important;
+}
 {% endblock %}
 {% block content %}
-
     <h1>HTML Form</h1>
-
     <form action="/calculator" method="POST">
         <label for="value1">Value 1:</label><br>
         <input type="text" id="value1" name="value1" value="1"><br>

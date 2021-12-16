@@ -1,17 +1,130 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
-{% block head %}
-    {{ super() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style3.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style4colorpro.css') }}">
+{% endblock %}
+{% block title %}Home{% endblock %}
+{% block styling %}
+body {
+            background-image: url("{{ url_for('static', filename='images/Internet_Banner.png') }}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
 {% endblock %}
 {% block content %}
-    <h1>Calculations</h1>
-    <p class="important">
-      Welcome to Gerald Calculator.
-        <img src="{{ url_for('static', filename='images/sample.jpeg') }}">
-    </p>
+<div style="width: 100%; height: 25%; display: grid">
+    <img style="object-fit: cover; object-position: center; place-self: center; place-content: center" src="{{ url_for('static', filename='images/internet_humor.png') }}" alt="Master Pic"/>
+</div>
+ <div id="main">
+        <div id="callouts">
+            <div class="callout float_left">
+                <div class="title">
+                    <h1>Day One</h1>
+                </div>
+                <div class="content float_left">
+                    <p class="body">
 
-<a href="/good/1.0/2.0">One Plus Two Good</a><br><a href="/bad/1/2">One Plus Two Bad</a>
+                        The USSR had launched new technology (sputnik) into orbit in 1957 which motivated the United
+                        States government to develop more sophisticated technology. Immediately, the United States
+                        government needed to fund a project that would secure the networks if in fact America is to
+                        be targeted for an attack on American soil. This would allow the military to communicate and
+                        remain in contact with the pentagon if system were destroyed considering an attack. ARPA and
+                        DARPA are created to establish a centralized agency for America.
+                    </p>
+                </div>
+
+            </div>
+            <div class="callout float_left">
+                <div class="title">
+                    <h1>The Job</h1>
+                </div>
+                <div class="content"></div>
+                <p class="body">
+                    The department of defense relied on technological achievements. Fortunately, during that time period
+                    the Advance Research Project Agency (ARPA) was created. This agency was cultivated by Dwight
+                    Eisenhower who appointed people that engineered ideas became patents that later connected the world
+                    to the internet.
+                </p>
+            </div>
+        </div>
+        <div class="callout float_left">
+            <div class="title">
+                <h1>Action Plan</h1>
+            </div>
+            <div class="content"></div>
+            <p class="body">
+                There are many contributors to name however J. C. R. Licklider created the computer information network
+                theory. Under his leadership in computer science ARPANET was formed from the first abstract of the
+                internet today.
+                Dr Paul Baran help create the term packets. Packets carried data from one point to another destination.
+                This is done by transmitting a file/paper after cutting into small pieces of information. Then sending
+                it along nodes that will stitch the file back together to the end receiver
+            </p>
+
+        </div>
+    </div>
+
 {% endblock %}
+
+<!--<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Project</title>
+
+    <style>
+        body {
+            background-image: url("images/Internet_Banner.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<div id="wrapper" class="margin_left_right_auto">
+    <div id="header">
+        <div id="logo" class="gr_width_small float_left">
+            <a href="index.html"> <img src="images/Motor_city.png" height="100" width="100" alt="DRC"/></a>
+
+        </div>
+        <div id="menu" class="gr_width_large float_left">
+            <menu class="float_right reset_margin_padding">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="projects.html">Project</a></li>
+                <li><a href="article.html">Information</a></li>
+                <li><a href="pylintandglossary.html">Pylint/Glossary</a></li>
+                <li><a href="pytest.html">Tuturial and Testing</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="object.html">Object</a></li>
+                <li><a href="about.html">About</a></li>
+
+
+            </menu>
+            <div class="float_right"><img src="images/internet_humor.png" height="255" width="960" alt="Master Pic"/>
+
+            </div>
+
+
+        </div>
+        <div id="masthead_landing" class="clear_float">
+
+        </div>
+    </div>
+
+</div>
+
+<div id="footer" class="clear_float text_center float_right">
+    Gerald Williams &#169; All rights reserved 2021
+    <img src="images/valid-html20.png" height="31" width="88" alt="Validate Erros"/></div>
+
+
+</body>
+</html>
+-->

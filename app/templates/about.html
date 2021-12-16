@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style2.css') }}">
+{% endblock %}
+{% block title %}About Me{% endblock %}
+{% block styling %}
+body {
+            background-image: url("{{ url_for('static', filename='images/Internet_Banner.png') }}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+{% endblock %}
+{% block content %}
+
+
+    <div class="=testimonial">
+        <article>
+            <h1>About Me</h1>
+            <img src="images/gw.png" height="322" width="303" alt="Me"/>
+            <blockquote>
+                <p>I was born and raised in Detroit, MI. My lovely mother birthed three beautiful children. I'm the
+                    oldest and love my beautiful sister and handsome brother. I loved growing up in Detroit. I enjoyed
+                    our family gatherings, the family reunions, and all the parties. The camaraderie of the neighborhood
+                    was inspirational because we knew every other kid on the block. The city Detroit is all about people
+                    working hard in a blue-collar community. The saying is "Detroit is built Ford tough" is true. My
+                    family and city made me who I am today. I love my family very, very much. I lived in several cities
+                    and states. I truly enjoyed my time in Miami, Florida, Brooklyn, NY. and presently here in the
+                    garden state of New Jersey. I love all my sports teams but none more so greater than the Detroit
+                    Lions. I'm a huge Detroit Lions football fan. Pleased to be part of a flag football team. As of
+                    today, I'm currently enrolled as a graduate student at New Jersey Institute of Technology. I plan on
+                    working in the field of cybersecurity and later in the private sector.</p>
+            </blockquote>
+            <h5>Gerald Williams Jr.</h5>
+            "A baby born is God way of saying the world must continue"
+
+
+        </article>
+
+
+    </div>
+{% endblock %}

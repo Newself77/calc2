@@ -1,3 +1,121 @@
-body {
-font-size: 200%;
+#wrapper {
+    width: 960px;
+    font-size: 19px;
+    line-height: 32px;
+    font-family: sans-serif;
+}
+
+#menu {
+    height: 120px;
+    line-height: 120px;
+}
+
+.margin_left_right_auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gr_width_large {
+    width: 593px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gr_width_small {
+    width: 367px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.float_left {
+    float: left;
+}
+
+.float_right {
+    float: right;
+}
+
+.clear_float {
+    clear: both;
+}
+
+.reset_margin_padding {
+    margin: 0;
+    padding: 0;
+}
+
+.title a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+#masthead_landing {
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 45px;
+    margin-bottom: 60px;
+    clear: both;
+
+}
+#h1{
+    float: left;
+}
+
+#hero_div {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#masthead {
+    height: 60px;
+    background-image: url("../images/internet_humor.png");
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 45px;
+
+}
+
+#menu li {
+    display: inline;
+}
+
+#side_photo {
+    width: 320px;
+    position: fixed;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.callout {
+    width: 320px;
+    height: 196px;
+}
+
+.footer {
+    text-align: center;
+    background-color: indianred;
+    color: royalblue;
+    padding:0;
+    position: static;
+    float: right;
+    height: 15px;
+
+
+}
+
+.position_absolute {
+    position: absolute;
+}
+
+hr {
+    margin-bottom: 24px;
+    margin-top: 24px;
 }

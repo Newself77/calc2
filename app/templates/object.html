@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style4colorpro.css') }}">
+{% endblock %}
+{% block title %}Object-Oriented Design{% endblock %}
+{% block styling %}
+body {
+            background-image: url("{{ url_for('static', filename='images/Internet_Banner.png') }}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+{% endblock %}
+{% block content %}
+
+<div style="width: 100%; height: 25%; display: grid">
+    <img style="object-fit: cover; object-position: center; place-self: center; place-content: center" src="{{ url_for('static', filename='images/internet_humor.png') }}" alt="Master Pic"/>
+</div>
+Solid Object Oriented Design
+    <div id="main">
+        <div id="content" class="">
+            <div id="articles">
+                <article class="article_teaser clear_float">
+                    <a href="article.html"><h1 class="title">Single Responsibility</h1></a>
+                    <p class="body">
+                        - is the calculator itself. A calculator has many fucntions we can call a class that we could flush out with more detail. However for our calculator we created just four classes were created that has a single responsibility. It serves one task which is a single responsibility. Making the work robust that makes it function well.
+                    </p>
+                    <div class="footer"><a class="float_right" href="article.html">Read More</a> </div>
+                </article>
+                <hr class="clear_float">
+                <article class="article_teaser clear_float">
+                    <a href="article.html"><h1 class="title">OCP</h1></a>
+                    <p class="body">
+                        - for the calculator project the open and close principle should be open for extension and closed for others to work on the class created. Should be open to re-utilization and replaced but only for base modification. In this case the calcultor has define roles unless I or someone else change the methods. If new things are added it better suits us than the single responsibility.
+                    </p>
+                    <div class="footer"><a class="float_right" href="article.html">Read More</a> </div>
+                </article>
+                <hr class="clear_float">
+                <article class="article_teaser clear_float">
+                    <a href="article.html"><h1 class="title">Liskov Substitution Principle</h1></a>
+                    <p class="body">
+                        - adding, subtracting, multiplication, and division should be able to code very well. In this principle with the calcultor we can keep the class in the family and able to call for it later if we need to.
+                    </p>
+                    <div class="footer"><a class="float_right" href="article.html">Read More</a> </div>
+                </article>
+                <hr class="clear_float">
+                <article class="article_teaser clear_float">
+                    <a href="article.html"><h1 class="title">Interface Segregation</h1></a>
+                    <p class="body">
+                        – just try to keep it simple. The calculator can do a lot of things but dont want to add things we wont use. But in our case we need one call function for one interface. Do not want to confuse anyone looking at my calculator.
+                    </p>
+                    <div class="footer"><a class="float_right" href="article.html">Read More</a> </div>
+                </article>
+                <hr class="clear_float">
+
+
+
+
+            </div>
+            <div id="article_title">
+                <h1 class="reset_margin_padding clear_float">Dependence Inversion</h1>
+            </div>
+            <div id="arti"></div>
+            <div id="article_body">
+                <p class="body">
+                    – look for better coding making sure the dependency won’t be convoluted. So were looking for abstraction making the calculator work as one unit. Making our work easier to code and read for other developers.
+
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}
