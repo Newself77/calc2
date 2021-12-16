@@ -1,4 +1,6 @@
 from flask import request, render_template, app
+
+from app.controllers_folders.results_controller import ResultsController
 from calc.calculator import Calculator
 import os.path
 import csv
@@ -37,7 +39,7 @@ class CalculatorController:
         my_tuple = (value1, value2)
         # if not os.path.isfile("../../datamanager/csv/calculations.csv"):
         # If it doesn't exist then create it
-        with open("datamanager/csv/calculations.csv", 'w', newline='') as file:
+        with open("datamanager/csv/calculations.csv", 'a', newline='') as file:
             writer = csv.writer(file)
             writer.writerow([value1, value2, operation, calculate(value1, value2, operation)])
 
@@ -46,6 +48,6 @@ class CalculatorController:
         # We will then write here to the csv.
 
         # this will call the correct operation
-        getattr(Calculator, operation)(my_tuple)
-        result = str(Calculator.get_last_result_value())
-        return render_template('result.html', value1=value1, value2=value2, operation=operation, result=result)
+
+        return ResultsController.get()
+
